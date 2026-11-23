@@ -72,6 +72,20 @@ yarn dev
 
 The application will be available at `http://localhost:3000`
 
+### Backend development
+
+The Express API is a separate application in `api-backend/`. In a second terminal, install its dependencies and start its development server:
+
+```bash
+cd api-backend
+npm install
+npm run dev
+```
+
+The API listens on port `8080` by default, or the port specified by `PORT`. Configure its MySQL connection with `DB_HOST`, `DB_PORT`, `DB_USER`, `DB_PASSWORD`, and `DB_NAME` in `api-backend/.env`. Protected routes also require Firebase Admin credentials for the project's Firebase environment.
+
+Set `NUXT_PUBLIC_BACKEND_API_URL=http://localhost:8080` in the frontend environment and restart Nuxt to use the local API. Both applications must be running to develop features backed by this API.
+
 ## Build
 
 Build the application for production:
